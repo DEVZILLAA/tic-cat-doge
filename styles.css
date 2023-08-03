@@ -1,0 +1,295 @@
+*, *::after, *::before{
+    box-sizing: border-box;
+}
+
+body,head {
+    background: rgb(103,0,255);
+background: -moz-linear-gradient(0deg, rgba(103,0,255,1) 0%, rgba(245,0,255,1) 100%);
+background: -webkit-linear-gradient(0deg, rgba(103,0,255,1) 0%, rgba(245,0,255,1) 100%);
+background: linear-gradient(0deg, rgba(103,0,255,1) 0%, rgba(245,0,255,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#6700ff",endColorstr="#f500ff",GradientType=1);
+    margin: 0;
+    font-family: 'Press Start 2P'
+    
+}
+
+.Title{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    font-size: 2rem;
+    
+}
+
+.game {
+    margin-top: 10vh;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+:root {
+    --cell-size: 180px;
+    --mark-size: calc(var(--cell-size) * .9);
+}
+
+.board {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(3,auto);
+    margin-bottom: 30px;
+
+}
+
+.gameButtons{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.gameButtons button {
+    font-size:  2rem;
+    background-color: black;
+    color: white;
+    border: 3px solid white;
+    padding: .25em .5em;
+    cursor: pointer;
+    border-radius: 10px;
+    font-family: 'Press Start 2P', cursive;
+    margin-bottom: 10px;
+}
+
+.gameButtons button:hover{
+    border: 3px solid black;
+    color: black;
+    background-color: yellow;
+}
+
+.win-counts{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+}
+
+.cell {
+    width: var(--cell-size);
+    height:  var(--cell-size);
+    border: 5px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+
+.cell:first-child,
+.cell:nth-child(2),
+.cell:nth-child(3) {
+    border-top: none;
+}
+
+.cell:nth-child(3n + 1) {
+    border-left: none;
+}
+
+
+.cell:nth-child(3n + 3) {
+    border-right: none;
+}
+
+.cell:last-child,
+.cell:nth-child(8),
+.cell:nth-child(7) {
+    border-bottom: none;
+}
+
+.cell.cat,
+.board.cat .cell:not(.dog):not(.cat):hover {
+    /* Use background-image to set the image of the cat */
+    background-image: url('images/CAT.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.cell.dog,
+.board.dog .cell:not(.cat):not(.dog):hover {
+    /* Use background-image to set the image of the dog */
+    background-image: url('images/DOG.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.board.cat .cell:not(.dog):not(.cat):hover{
+    filter: grayscale(50%) sepia(30%) hue-rotate(45deg);
+}
+
+.board.dog .cell:not(.cat):not(.dog):hover{
+    filter: grayscale(50%) sepia(30%) hue-rotate(45deg);
+}
+
+.cell.cat,
+.cell.dog {
+    cursor: not-allowed;
+}
+
+
+
+.winning-message{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0, .9);
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 5rem;
+    flex-direction: column;
+
+    
+}
+
+.winning-message img {
+    height: 40%;
+    margin-bottom: 20px;
+
+}
+
+.winning-message button{
+    font-size:  3rem;
+    background-color: black;
+    color: white;
+    border: 3px solid white;
+    padding: .25em .5em;
+    cursor: pointer;
+    font-family: 'Press Start 2P', cursive;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.winning-message button:hover{
+    border: 3px solid black;
+    color: black;
+    background-color: yellow;
+}
+
+.winning-message.show{
+    display: flex;
+
+    
+}
+
+.endGameButtons{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.endGameButtons #matchHistory{
+    font-size: 2rem;
+}
+
+.matchReview {
+    display: none;
+    gap: 40px;
+}
+
+.matchReview button{
+
+    justify-content: center;
+    align-content: space-between;
+    justify-items: center;
+    align-items: center;
+    font-size:  2rem;
+    background-color: black;
+    color: white;
+    border: 3px solid white;
+    padding: .25em .5em;
+    cursor: pointer;
+    border-radius: 10px;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.matchReview button:hover{
+    border: 3px solid black;
+    color: black;
+    background-color: yellow;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+
+@media (max-width: 390px){
+
+    .Title {
+        font-size: .9rem;
+        justify-content: center;
+    }
+
+    .game {
+        margin-top: 10vh;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    :root {
+        --cell-size: 115px;
+        --mark-size: calc(var(--cell-size) * .9);
+    }
+
+    .cell{
+        border: 3px solid black;
+    }
+
+    .gameButtons button, .endGameButtons button, .matchReview :no-button {
+        font-size: 2rem;
+    }
+
+    .endGameButtons button {
+        font-size: 2rem;
+    }
+    .endGameButtons #matchHistory{ 
+        font-size: 1.5rem;
+    }
+
+    .winning-message {
+        font-size: 2rem;
+    }
+
+    #winningImage {
+        width: 70%;
+        height: auto;
+    }
+
+    .win-counts{
+        margin: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 12px;
+    }
+}

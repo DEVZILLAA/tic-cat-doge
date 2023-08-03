@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tic Cat Doge</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+</head>
+<body>
+ <div class="Title">
+  <h1>TIC-CAT-DOGE</h1>
+ </div> 
+ <div class="game">
+  <div class="board" id="board">
+    
+    <div class="cell" data-cell></div>
+    <div class="cell" data-cell></div>
+    <div class="cell" data-cell></div>
+    <div class="cell" data-cell></div>
+    <div class="cell" data-cell></div>
+    <div class="cell" data-cell></div>
+    <div class="cell" data-cell></div>
+    <div class="cell" data-cell></div>
+    <div class="cell" data-cell></div>
+  </div>  
+  <div class="gameButtons">
+    <button id="restartButtonOnScreen">Reset</button>
+  </div>
+
+  <div class="win-counts">
+    <span id="doge-Wins">Doge Wins: 0</span>
+    <span id="cat-Wins">Cat Wins: 0</span>
+    <span id="draws">Draws: 0</span>
+  </div>
+ <footer>
+  <p> <h6>Developed by<span> Micokoko &</span> <span><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" target="_blank">Carloz</a></span> |&copy; All Rights Reserved</center></h6></p>
+</footer>
+  <div class="winning-message" id="winningMessage">
+    <audio id="winningAudio" controls style="display: none;">
+      <source src="" type="audio/mpeg">
+    </audio>
+    <img id="winningImage" src="" alt="Winning Image">
+      <div data-winning-message-text>CAT Wins!</div>
+      <div class="endGameButtons">
+      <button id="restartButton">PLAY AGAIN</button>
+      <button id="matchHistory">REVIEW MATCH HISTORY</button>
+      </div>
+  </div>    
+  
+    <div class="matchReview" id="match-review">
+      <button id="previousButton"> < </button>
+      <button id="restartButtonMatchRev">PLAY AGAIN</button>
+      <button id="nextButton">> </button>
+     </div> 
+  <audio id="catSound" src="images/mixkit-sweet-kitty-meow-93.wav"></audio>
+  <audio id="dogSound" src="images/single-dog-bark-king-charles-spaniel-41366.mp3"></audio>
+</div> 
+</body>
+
+<script src="script.js"></script>
+</html>
