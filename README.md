@@ -1,1 +1,1 @@
-A simple tic tac toe game but instead with circles and xs. We got Cat and Dogs.
+A simple tic tac toe game but instead with Os and Xs. We got Cat and Dogs.
